@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akeem Campbell's Portfolio</title>
+    <link rel="stylesheet" href="../CSS/index.css">
+</head>
+<body class="dark-mode"> <!-- Start with dark mode -->
+    <header>
+        <nav>
+            <!-- Logo and Text combined -->
+            <div class="logo">
+                <img src="../ASSETS/logo.png" alt="Akeem Campbell's Logo" class="logo-img">
+                <span>Akeem Campbell</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="Accreditations.html">Accreditations</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            
+            <!-- Updated theme toggle as a switch -->
+            <div class="theme-toggle-container">
+                <label class="theme-toggle-label">
+                    <input type="checkbox" class="theme-toggle-checkbox">
+                    <span class="theme-toggle-slider"></span>
+                </label>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Welcome to My Portfolio</h1>
+            <p class="tagline">Aspiring Cybersecurity Professional | CTF Competitor | Security+ Certified</p>
+            <p>Explore my work, skills, and passion for cybersecurity.</p>
+            <div class="cta-buttons">
+                <a href="projects.html" class="cta-button">View My Projects</a>
+                <a href="contact.html" class="cta-button">Get in Touch</a>
+            </div>
+        </section>
+        
+        <section class="about">
+            <h2>About Me</h2>
+            <p>I am a recent graduate in Cybersecurity, passionate about protecting digital assets and solving complex security challenges. With expertise in networking, ethical hacking, and vulnerability assessments, I aim to contribute to a safer digital world.</p>
+            <div class="cta-buttons">
+                <a href="about.html" class="cta-button">Learn More</a>
+            </div>
+        </section>
+        
+        <section class="accomplishments">
+            <h2>Accomplishments</h2>
+            <div class="accomplishment-item">
+                <h3>Top 2 in JDF Security Code Sprint</h3>
+                <p>Ranked among the top 2 in the JDF Security Code Sprint, competing against leading security firms and organizations in Jamaica for two consecutive years.</p>
+            </div>
+            <div class="accomplishment-item">
+                <h3>Completed Multiple TryHackMe Challenges</h3>
+                <p>Successfully completed several TryHackMe machines and activities, including vulnerable machines designed for Capture The Flag (CTF) competitions.</p>
+            </div>
+            <div class="accomplishment-item">
+                <h3>Created Vulnerable Machines for CTF</h3>
+                <p>Developed multiple vulnerable machines designed for use in Capture The Flag competitions and cybersecurity training.</p>
+            </div>
+            <div class="cta-buttons">
+                <a href="contact.html" class="cta-button">Collaborate with Me</a>
+            </div>
+        </section>
+        
+        <section class="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li class="skill" data-description="Developed and implemented secure network protocols, designed firewalls and intrusion detection systems, and performed regular security audits.">
+                    Network Security
+                    <div class="skill-description">Developed and implemented secure network protocols, designed firewalls and intrusion detection systems, and performed regular security audits.</div>
+                </li>
+                <li class="skill" data-description="Conducted ethical hacking exercises such as penetration testing and vulnerability scanning, identifying and addressing security flaws in web applications and networks.">
+                    Ethical Hacking
+                    <div class="skill-description">Conducted ethical hacking exercises such as penetration testing and vulnerability scanning, identifying and addressing security flaws in web applications and networks.</div>
+                </li>
+                <li class="skill" data-description="Coordinated and executed incident response strategies, analyzing logs, investigating breaches, and implementing recovery plans in critical situations.">
+                    Incident Response
+                    <div class="skill-description">Coordinated and executed incident response strategies, analyzing logs, investigating breaches, and implementing recovery plans in critical situations.</div>
+                </li>
+                <li class="skill" data-description="Managed and analyzed security events and alerts using SIEM platforms like Splunk, contributing to threat detection and real-time monitoring.">
+                    SIEM and Threat Intelligence
+                    <div class="skill-description">Managed and analyzed security events and alerts using SIEM platforms like Splunk, contributing to threat detection and real-time monitoring.</div>
+                </li>
+                <li class="skill" data-description="Lead vulnerability assessment projects by scanning systems, identifying weak points, and recommending fixes to strengthen digital defenses.">
+                    Vulnerability Assessment
+                    <div class="skill-description">Lead vulnerability assessment projects by scanning systems, identifying weak points, and recommending fixes to strengthen digital defenses.</div>
+                </li>
+            </ul>
+            <div class="cta-buttons">
+                <a href="contact.html" class="cta-button">Hire Me</a>
+            </div>
+        </section>
+        
+        <section class="projects">
+            <h2>Featured Projects</h2>
+            <div class="project-item">
+                <h3>Custom Vulnerable Machines</h3>
+                <img src="../ASSETS/CTF.png" alt="Vulnerable Machines Project Screen" class="project-screen" id="projectImage1">
+                <p>Created vulnerable environments for cybersecurity training and simulations</p>
+            </div>
+            <div class="project-item">
+                <h3>HTTP Proxy Server</h3>
+                <img src="../ASSETS/http proxy server.png" alt="Proxy Server Project Screen" class="project-screen" id="projectImage2">
+                <p>Created a custom HTTP proxy server for cybersecurity training, simulating real-world network environments and vulnerabilities for penetration testing and security assessments.</p>
+            </div>
+            <div class="cta-buttons">
+                <a href="projects.html" class="cta-button">See More Projects</a>
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- Modal for Enlarge Image -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Akeem Campbell. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Get modal element
+        var modal = document.getElementById("imageModal");
+        var modalImg = document.getElementById("modalImage");
+    
+        // Get images
+        var images = document.querySelectorAll('.project-screen');
+        
+        // Loop through all images
+        images.forEach(function(image) {
+            image.onclick = function() {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            }
+        });
+    
+        // Close the modal when clicking the "x"
+        var span = document.getElementsByClassName("close")[0];
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+    
+        // Add event listeners to each skill item
+        document.querySelectorAll('.skill').forEach(item => {
+            item.addEventListener('click', () => {
+                // Toggle the 'active' class to show or hide the description
+                item.classList.toggle('active');
+            });
+        });
+    
+        // Wait for DOM to load
+        document.addEventListener("DOMContentLoaded", function () {
+            // Select all page links
+            const links = document.querySelectorAll('nav .nav-links a');
+    
+            // Add event listeners for page navigation
+            links.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault(); // Prevent the default link behavior
+                    
+                    // Trigger the fade-out effect
+                    document.body.classList.add('page-exit');
+                    
+                    // Wait for the fade-out to finish before navigating
+                    setTimeout(() => {
+                        window.location.href = e.target.href; // Redirect to the link's target
+                    }, 500); // Delay the navigation to match the fade-out animation
+                });
+            });
+    
+            // Optional: Handle the page load animation
+            window.addEventListener("load", () => {
+                document.body.classList.add('page-enter');
+            });
+    
+            // Check if a theme is already set in localStorage
+            const themeToggleCheckbox = document.querySelector('.theme-toggle-checkbox');
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                // Apply the saved theme
+                document.body.classList.remove('dark-mode', 'light-mode'); // Remove both classes to reset
+                document.body.classList.add(savedTheme); // Add the saved theme class
+                // Update checkbox state based on saved theme
+                themeToggleCheckbox.checked = savedTheme === 'light-mode';
+            } else {
+                // Default to dark mode if no theme is saved
+                document.body.classList.add('dark-mode');
+            }
+    
+            // Add event listener to the checkbox to toggle theme
+            themeToggleCheckbox.addEventListener('change', () => {
+                if (themeToggleCheckbox.checked) {
+                    document.body.classList.remove('dark-mode');
+                    document.body.classList.add('light-mode');
+                    localStorage.setItem('theme', 'light-mode'); // Save preference
+                } else {
+                    document.body.classList.remove('light-mode');
+                    document.body.classList.add('dark-mode');
+                    localStorage.setItem('theme', 'dark-mode'); // Save preference
+                }
+            });
+        });
+    
+        // JavaScript to set the active page indicator
+        document.addEventListener("DOMContentLoaded", function() {
+            const links = document.querySelectorAll('nav .nav-links a');
+            const currentLocation = window.location.pathname;
+    
+            links.forEach(link => {
+                // Check if the link matches the current page's URL
+                if (link.getAttribute('href') === currentLocation) {
+                    link.classList.add('active'); // Add active class to the link
+                }
+            });
+        });
+    </script>
+</body>
+</html>

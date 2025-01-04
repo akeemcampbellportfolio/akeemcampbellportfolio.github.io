@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accreditations - Akeem Campbell</title>
+    <link rel="stylesheet" href="../CSS/index.css">
+</head>
+<body class="accreditations-page">
+
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="../ASSETS/logo.png" alt="Akeem Campbell's Logo" class="logo-img">
+                <span>Akeem Campbell</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="accreditations.html">Accreditations</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="theme-toggle-container">
+                <label class="theme-toggle-label">
+                    <input type="checkbox" class="theme-toggle-checkbox">
+                    <span class="theme-toggle-slider"></span>
+                </label>
+            </div>
+        </nav>
+    </header>
+
+    <section class="accreditations-hero" style="background-image: url('../ASSETS/background.png');">
+        <div class="hero-overlay">
+            <h1>Accreditations</h1>
+            <p>Explore my certifications, achievements, and ongoing professional development in the field of cybersecurity.</p>
+        </div>
+    </section>
+
+    <main>
+        <section class="accreditations">
+            <h2>Accreditations & Certifications</h2>
+            <p>As a passionate cybersecurity professional, I have continually pursued opportunities to enhance my skills and knowledge through industry-recognized certifications and participation in competitive events. Below are some of my key accreditations that reflect my commitment to staying up-to-date with the latest trends and best practices in the field of cybersecurity.</p>
+
+            <h3>Professional Certification</h3>
+            <ul>
+                <li><strong>Security+ (CompTIA):</strong> Demonstrates foundational knowledge in network security, risk management, and incident response.</li>
+            </ul>
+
+            <h3>Cybersecurity Competitions</h3>
+            <ul>
+                <li><strong>Top 2 in JDF Security Code Sprint:</strong> Ranked second in a competition against leading security firms such as MOCA, JCF, JDF, and MNS.</li>
+                <li><strong>Capture The Flag (CTF) Achievements:</strong> Ranked in the top positions in various CTF competitions, demonstrating strong problem-solving and technical skills.</li>
+            </ul>
+
+            <h3>Recognition & Honors</h3>
+            <ul>
+                <<li><strong>Academic Excellence Award:</strong> Graduated with a BSc. in Networking, majoring in Cybersecurity, from the University of Technology, Jamaica, with Honors.</li>
+
+            </ul>
+
+            <h3>Ongoing Education & Professional Development</h3>
+            <ul>
+                <li><strong>TryHackMe:</strong> Actively completing challenges and learning new penetration testing and cybersecurity skills.</li>
+                <li><strong>LetsDefend:</strong> Engaging in practical exercises to enhance my skills in SOC (Security Operations Center) operations and incident response.</li>
+            </ul>
+            
+        <!-- Picture Gallery Section -->
+            <h3>Highlights</h3>
+            <div class="gallery">
+                <div class="gallery-track">
+                <img src="../ASSETS/pic_1.jpeg" alt="Competition 1" class="gallery-image">
+                <img src="../ASSETS/pic_2.jpeg" alt="Competition 2" class="gallery-image">
+                <img src="../ASSETS/pic_3.jpeg" alt="Competition 3" class="gallery-image">
+                <img src="../ASSETS/pic_4.jpeg" alt="Competition 4" class="gallery-image">
+                <img src="../ASSETS/pic_5.jpeg" alt="Competition 5" class="gallery-image">
+                <img src="../ASSETS/pic_6.jpeg" alt="Competition 6" class="gallery-image">
+                <img src="../ASSETS/pic_7.jpeg" alt="Competition 7" class="gallery-image">
+                <!-- Repeated for seamless loop -->
+                <img src="../ASSETS/pic_1.jpeg" alt="Competition 1" class="gallery-image">
+                <img src="../ASSETS/pic_2.jpeg" alt="Competition 2" class="gallery-image">
+                <img src="../ASSETS/pic_3.jpeg" alt="Competition 3" class="gallery-image">
+                <img src="../ASSETS/pic_4.jpeg" alt="Competition 4" class="gallery-image">
+                <img src="../ASSETS/pic_5.jpeg" alt="Competition 5" class="gallery-image">
+                <img src="../ASSETS/pic_6.jpeg" alt="Competition 6" class="gallery-image">
+                <img src="../ASSETS/pic_7.jpeg" alt="Competition 7" class="gallery-image">
+            </div>
+        </div>
+
+        <h3>Get in Touch</h3>
+        <p>If you're interested in discussing how I can help secure your organization's infrastructure or collaborate on cybersecurity projects, feel free to </p>
+        <div class="cta-button-wrapper">
+            <a href="contact.html" class="cta-button">Get in Touch</a>
+        </div>
+    </section>
+</main>
+
+    <footer>
+        <p>&copy; 2025 Akeem Campbell. All rights reserved.</p>
+    </footer>
+
+    <!-- Lightbox HTML -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" id="lightbox-close">&times;</span>
+        <div class="lightbox-nav">
+            <span class="lightbox-arrow lightbox-left" id="lightbox-left"></span>
+            <img id="lightbox-image" src="" alt="Enlarged view">
+            <span class="lightbox-arrow lightbox-right" id="lightbox-right"></span>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const themeToggleCheckbox = document.querySelector('.theme-toggle-checkbox');
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.body.classList.remove('dark-mode', 'light-mode');
+                document.body.classList.add(savedTheme);
+                themeToggleCheckbox.checked = savedTheme === 'light-mode';
+            } else {
+                document.body.classList.add('dark-mode');
+            }
+
+            themeToggleCheckbox.addEventListener('change', () => {
+                if (themeToggleCheckbox.checked) {
+                    document.body.classList.remove('dark-mode');
+                    document.body.classList.add('light-mode');
+                    localStorage.setItem('theme', 'light-mode');
+                } else {
+                    document.body.classList.remove('light-mode');
+                    document.body.classList.add('dark-mode');
+                    localStorage.setItem('theme', 'dark-mode');
+                }
+            });
+
+            // Gallery movement logic
+            const galleryTrack = document.querySelector('.gallery-track');
+            let position = 0;
+            const galleryWidth = galleryTrack.scrollWidth;
+
+            function moveGallery() {
+                position -= 0.3; // Adjust speed
+                if (Math.abs(position) >= galleryWidth) {
+                    position = 0; // Reset when half the gallery is scrolled
+                }
+                galleryTrack.style.transform = `translateX(${position}px)`;
+                requestAnimationFrame(moveGallery);
+            }
+
+            moveGallery();
+
+            // Lightbox functionality
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxClose = document.getElementById('lightbox-close');
+            const lightboxLeft = document.getElementById('lightbox-left');
+            const lightboxRight = document.getElementById('lightbox-right');
+
+            let currentImageIndex = 0;
+            const images = Array.from(document.querySelectorAll('.gallery-image'));
+
+            // Exclude duplicate images from the lightbox
+            const uniqueImages = images.slice(0, 7); // Only first 7 images (not duplicates)
+
+            function showImage(index) {
+                lightboxImage.src = uniqueImages[index].src;
+                lightbox.classList.add('active');
+            }
+
+            // Attach click event to only the first set of images (not the duplicate ones)
+            uniqueImages.forEach((image, index) => {
+                image.addEventListener('click', () => {
+                    currentImageIndex = index;
+                    showImage(currentImageIndex);
+                });
+            });
+
+            lightboxClose.addEventListener('click', () => {
+                lightbox.classList.remove('active');
+            });
+
+            // Close the lightbox if the user clicks outside the image
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    lightbox.classList.remove('active');
+                }
+            });
+
+            // Navigation through images
+            lightboxLeft.addEventListener('click', () => {
+                currentImageIndex = (currentImageIndex === 0) ? uniqueImages.length - 1 : currentImageIndex - 1;
+                showImage(currentImageIndex);
+            });
+
+            lightboxRight.addEventListener('click', () => {
+                currentImageIndex = (currentImageIndex === uniqueImages.length - 1) ? 0 : currentImageIndex + 1;
+                showImage(currentImageIndex);
+            });
+
+            // Keyboard arrow navigation
+            document.addEventListener('keydown', (e) => {
+                if (lightbox.classList.contains('active')) { // Only listen for keyboard events if lightbox is active
+                    if (e.key === 'ArrowLeft') {
+                        // Left arrow key: move to previous image
+                        currentImageIndex = (currentImageIndex === 0) ? uniqueImages.length - 1 : currentImageIndex - 1;
+                        showImage(currentImageIndex);
+                    } else if (e.key === 'ArrowRight') {
+                        // Right arrow key: move to next image
+                        currentImageIndex = (currentImageIndex === uniqueImages.length - 1) ? 0 : currentImageIndex + 1;
+                        showImage(currentImageIndex);
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

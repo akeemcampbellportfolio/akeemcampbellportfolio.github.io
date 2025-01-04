@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akeem Campbell's Projects</title>
+    <link rel="stylesheet" href="../CSS/index.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="../ASSETS/logo.png" alt="Akeem Campbell's Logo" class="logo-img">
+                <span>Akeem Campbell</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="accreditations.html">Accreditations</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <!-- Updated theme toggle as a switch -->
+            <div class="theme-toggle-container">
+                <label class="theme-toggle-label">
+                    <input type="checkbox" class="theme-toggle-checkbox">
+                    <span class="theme-toggle-slider"></span>
+                </label>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>My Projects</h1>
+            <p>Explore the projects I have worked on, showcasing my skills in cybersecurity, networking, and web development.</p>
+        </section>
+
+        <!-- CTF Machines -->
+        <section class="projects">
+            <h2>CTF Machines</h2>
+            <div class="project-item">
+                <h3>Custom Vulnerable Machines</h3>
+                <img src="../ASSETS/CTF.png" alt="Vulnerable Machines Project Screen" class="project-screen" onclick="openModal(this)">
+                <p>Designed and solved Capture The Flag (CTF) challenges, demonstrating skills in reverse engineering and penetration testing. This project helped improve my ability to identify vulnerabilities and exploit them in controlled environments, simulating real-world cyberattack scenarios.</p>
+            </div>
+            <div class="project-item">
+                <h3>Custom Vulnerable Machine</h3>
+                <div class="project-images">
+                    <img src="../ASSETS/CTF_1.jpeg" alt="Advanced CTF Machine Interface - Step 1" class="project-screen" onclick="openModal(this)">
+                    <img src="../ASSETS/CTF_2.jpeg" alt="Advanced CTF Machine Analysis - Step 2" class="project-screen" onclick="openModal(this)">
+                </div>
+                <p>Completed a custom CTF machine designed with multiple layers of security to simulate real-world attack scenarios. This project involved advanced exploitation techniques such as privilege escalation and lateral movement, significantly enhancing my penetration testing expertise.</p>
+            </div>
+        </section>
+
+        <!-- Web Development -->
+        <section class="projects">
+            <h2>Web Development</h2>
+            <div class="project-item">
+                <h3>Responsive Portfolio Website</h3>
+                <div class="project-images">
+                    <img src="../ASSETS/website_1.jpeg" alt="Web Development Project Screenshot 1" class="project-screen" onclick="openModal(this)">
+                    <img src="../ASSETS/website_2.jpeg" alt="Web Development Project Screenshot 2" class="project-screen" onclick="openModal(this)">
+                </div>
+                <p>This website, built as part of my web development project, showcases my skills and experience. It is a fully responsive portfolio website developed using HTML, CSS, and JavaScript. The site includes sections such as About, Projects, and Contact, designed with a clean and modern interface. The responsive design ensures that the website functions seamlessly across different devices and screen sizes, providing a great user experience on both mobile and desktop platforms.</p>
+            </div>
+        </section>
+
+        <!-- Tools and Servers -->
+        <section class="projects">
+            <h2>Server and Tools</h2>
+            <div class="project-item">
+                <h3>HTTP Proxy Server</h3>
+                <img src="../ASSETS/http proxy server.png" alt="Proxy Server Project Screen" class="project-screen" onclick="openModal(this)">
+                <p>Developed a custom HTTP proxy server to simulate vulnerable environments for cybersecurity training and penetration testing. The server allowed the testing of various attack vectors, providing insights into web application security issues and network-level vulnerabilities.</p>
+            </div>
+            <div class="project-item">
+                <h3>Autopsy Tool</h3>
+                <div class="project-images">
+                    <img src="../ASSETS/autospy.jpeg" alt="Autopsy Tool Interface - Step 1" class="project-screen" onclick="openModal(this)">
+                    <img src="../ASSETS/autospy_2.jpeg" alt="Autopsy Tool Analysis - Step 2" class="project-screen" onclick="openModal(this)">
+                </div>
+                <p>The Autopsy tool is an open-source digital forensics platform used for analyzing disk images and recovering evidence. This project demonstrates my skills in conducting forensic investigations, extracting critical data, and compiling a report based on the findings. It helped me gain hands-on experience with file system analysis, keyword searches, and timeline creation for cybersecurity investigations.</p>
+            </div>
+            <div class="project-item">
+                <h3>FTK Imager</h3>
+                <div class="project-images">
+                    <img src="../ASSETS/Ftk Imager.jpeg" alt="FTK Imager Interface - Step 1" class="project-screen" onclick="openModal(this)">
+                    <img src="../ASSETS/ftk imager2.jpeg" alt="FTK Imager Analysis - Step 2" class="project-screen" onclick="openModal(this)">
+                </div>
+                <p>FTK Imager is a digital forensics tool used to preview and acquire forensic images of data. This project highlights my ability to work with forensic imaging and data preservation for analysis. I utilized FTK Imager to create forensic copies of storage devices and validate their integrity using hash values.</p>
+            </div>
+        </section>
+
+        <!-- Security Simulations -->
+        <section class="projects">
+            <h2>Security Simulations</h2>
+            <div class="project-item">
+                <h3>DDoS Attack Simulation and Mitigation</h3>
+                <div class="project-images">
+                    <img src="../ASSETS/simulate_ddos.jpeg" alt="DDoS Attack Simulation Step 1" class="project-screen" onclick="openModal(this)">
+                    <img src="../ASSETS/port_scan.jpeg" alt="DDoS Attack Simulation Step 2" class="project-screen" onclick="openModal(this)">
+                    <img src="../ASSETS/Patch.jpeg" alt="Mitigation Techniques Applied" class="project-screen" onclick="openModal(this)">
+                    <img src="../ASSETS/Patch_2.jpeg" alt="Mitigation Techniques Applied" class="project-screen" onclick="openModal(this)">
+                </div>
+                <p>This project involved simulating a Distributed Denial of Service (DDoS) attack on a web server to understand its impact on performance and availability. After successfully simulating the attack, I implemented and tested various mitigation techniques, including rate limiting, IP blacklisting, and setting up a WAF (Web Application Firewall) to defend against the attack. The process helped me understand both the offensive and defensive aspects of network security.</p>
+            </div>
+
+            <!-- SIEM Monitoring -->
+            <div class="project-item">
+                <h3>SIEM Monitoring and Threat Detection</h3>
+                <div class="project-images">
+                    <img src="../ASSETS/Siem Monitor.jpeg" alt="SIEM Monitoring Dashboard - Step 1" class="project-screen" onclick="openModal(this)">
+                    <img src="../ASSETS/siem montioring 2.jpeg" alt="SIEM Threat Detection Analysis - Step 2" class="project-screen" onclick="openModal(this)">
+                </div>
+                <p>Configured and implemented Security Information and Event Management (SIEM) systems simulating real-time threat monitoring, log aggregation, and incident detection. This project enhanced my ability to monitor network activities, identify potential security breaches, and respond effectively using automated alerts and analysis tools. Additionally, I am familiar with Endpoint Detection and Response (EDR), Threat Intelligence, and Log Management, which allowed me to enhance my threat detection and response capabilities.</p>
+            </div>
+        </section>
+
+        <!-- Case Studies -->
+        <section class="projects">
+            <h2>Case Study</h2>
+            <div class="project-item">
+                <h3>Cybersecurity Threat and Best Practices</h3>
+                <button onclick="toggleIframeSize()">Click to Expand eBook</button>
+                <iframe id="pdfIframe" src="../ASSETS/ebook/The Investigation of Cyber-Crime and Mitigation Strategies in Jamaica.pdf" aria-label="Click to expand the eBook"></iframe>
+                <p>This eBook outlines the investigation of cyber-crime and strategies for mitigating its effects in Jamaica. The case study explores real-world examples and discusses preventative measures and responses to cyber incidents, offering valuable insights into improving cybersecurity practices.</p>
+                <p><a href="../ASSETS/ebook/The Investigation of Cyber-Crime and Mitigation Strategies in Jamaica.pdf">Download PDF</a></p>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Akeem Campbell. All rights reserved.</p>
+    </footer>
+
+    <!-- Modal for Enlarged Image -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close-btn">&times;</span>
+        <img id="modalImage" class="modal-content">
+        <div id="caption"></div>
+    </div>
+
+    <script>
+        // Function to open modal with clicked image
+        function openModal(img) {
+            var modal = document.getElementById("imageModal");
+            var modalImg = document.getElementById("modalImage");
+            var captionText = document.getElementById("caption");
+
+            modal.style.display = "block";
+            modalImg.src = img.src;
+            captionText.innerHTML = img.alt;
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            var modal = document.getElementById("imageModal");
+            modal.style.display = "none";
+        }
+
+        // Function to toggle iframe size for eBook view
+        function toggleIframeSize() {
+            var iframe = document.getElementById("pdfIframe");
+            iframe.style.height = iframe.style.height === "100vh" ? "600px" : "100vh";
+        }
+
+        // Check if a theme is already set in localStorage
+        const themeToggleCheckbox = document.querySelector('.theme-toggle-checkbox');
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            // Apply the saved theme
+            document.body.classList.remove('dark-mode', 'light-mode');
+            document.body.classList.add(savedTheme);
+            themeToggleCheckbox.checked = savedTheme === 'light-mode';
+        } else {
+            document.body.classList.add('dark-mode');
+        }
+
+        themeToggleCheckbox.addEventListener('change', () => {
+            if (themeToggleCheckbox.checked) {
+                document.body.classList.remove('dark-mode');
+                document.body.classList.add('light-mode');
+                localStorage.setItem('theme', 'light-mode');
+            } else {
+                document.body.classList.remove('light-mode');
+                document.body.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark-mode');
+            }
+        });
+
+        // JavaScript to set the active page indicator
+        document.addEventListener("DOMContentLoaded", function() {
+            const links = document.querySelectorAll('nav .nav-links a');
+            const currentLocation = window.location.pathname;
+
+            links.forEach(link => {
+                if (link.getAttribute('href') === currentLocation) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Akeem Campbell</title>
+    <link rel="stylesheet" href="../CSS/index.css">
+    <style>
+        /* Hero Section Style */
+        .about-hero {
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            padding-top: 120px; /* Adjust for nav bar offset */
+            padding-bottom: 100px; /* Adjust as needed */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .about-hero .hero-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* Dark semi-transparent overlay */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 20px; /* Adjust padding */
+        }
+
+        /* Adjusting other sections below */
+        .about-page .about h2 {
+            text-align: center;
+        }
+
+        /* Styling for the CTA container */
+        .cta-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Space between buttons */
+            margin-top: 20px;
+        }
+
+        .cta-button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body class="about-page">
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="../ASSETS/Logo.png" alt="Akeem Campbell's Logo" class="logo-img">
+                <span>Akeem Campbell</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="accreditations.html">Accreditations</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <!-- Updated theme toggle as a switch -->
+            <div class="theme-toggle-container">
+                <label class="theme-toggle-label">
+                    <input type="checkbox" class="theme-toggle-checkbox">
+                    <span class="theme-toggle-slider"></span>
+                </label>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Background Image -->
+    <section class="about-hero" style="background-image: url('../ASSETS/background.png');">
+        <div class="hero-content">
+            <h1>About Me</h1>
+            <p class="hero-paragraph">Welcome to my world of cybersecurity and technology. Let me take you through my journey, skills, and aspirations!</p>
+        </div>
+    </section>
+
+    <main>
+        <section class="about">
+            
+            <!-- Profile Image Section -->
+            <div class="profile-image">
+                <img src="../ASSETS/Professional_pic.jpg" alt="Akeem Campbell" class="profile-img" id="profile-img">
+            </div>
+
+            <p>Hi, I’m Akeem Campbell, a recent graduate in Cybersecurity from the University of Technology, Jamaica, with a passion for solving complex technical challenges. I specialize in network security, penetration testing, and defensive security, always striving to create solutions that are both innovative and secure.</p>
+
+            <h3>Professional Journey</h3>
+            <p>I graduated with a degree in Cybersecurity from the University of Technology, Jamaica, where I developed my skills through hands-on experience with simulated real-world challenges, including Capture The Flag (CTF) competitions and creating vulnerable machines. During my time at university, I worked on several projects that tested my ability to think critically and develop secure, robust solutions for various security issues.</p>
+
+            <h3>Skills & Expertise</h3>
+            <ul>
+                <li><strong>Web Development:</strong> HTML, CSS, JavaScript, React, Node.js</li>
+                <li><strong>Programming Languages:</strong> Python, Java, C++, Bash, PowerShell</li>
+                <li><strong>Networking & Security:</strong> Firewalls, VPNs, Routing & Switching, Intrusion Detection Systems (IDS)</li>
+                <li><strong>Penetration Testing (Offensive Security):</strong> Kali Linux, Metasploit, Burp Suite, Wireshark, Nmap</li>
+                <li><strong>Defensive Security:</strong> Security Information and Event Management (SIEM), Firewalls, Incident Response, Endpoint Protection</li>
+            </ul>
+
+            <h3>Accreditations</h3>
+            <ul>
+                <li>Security+ Certified</li>
+                <li>Top 2 in JDF Security Code Sprint(faced off against leading security firms in Jamaica including MOCA, JCF, JDF, MNS, etc.)</li>
+                <li>Multiple CTF Rankings: Ranked among the top in various Capture The Flag challenges</li>
+            </ul>
+
+            <h3>Career Goals & Aspirations</h3>
+            <p>Currently, I’m focused on expanding my expertise in defensive security and network forensics. In the long term, I aspire to become a cybersecurity architect, helping organizations build resilient security infrastructures that can withstand evolving cyber threats.</p>
+
+            <h3>Personal Touch</h3>
+            <p>When I’m not working on cybersecurity challenges, you can find me playing basketball. I enjoy the competitive nature of the sport, which helps me stay sharp and focused in both my professional and personal life.</p>
+
+            <h3>Get in Touch</h3>
+            <p>Feel free to check out my projects or reach out if you’d like to collaborate!</p>
+
+            <!-- CTA Buttons -->
+            <div class="cta-container">
+                <a href="contact.html" class="cta-button">Get in Touch</a>
+                <a href="projects.html" class="cta-button">View My Projects</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal for Image Enlargement -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImg">
+        <div id="caption"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Akeem Campbell. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("imageModal");
+
+        // Get the image and insert it inside the modal
+        var img = document.getElementById("profile-img");
+        var modalImg = document.getElementById("modalImg");
+        var captionText = document.getElementById("caption");
+
+        img.onclick = function() {
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+        }
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // Theme toggle functionality
+        document.addEventListener("DOMContentLoaded", function () {
+            const themeToggleCheckbox = document.querySelector('.theme-toggle-checkbox');
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.body.classList.remove('dark-mode', 'light-mode');
+                document.body.classList.add(savedTheme);
+                themeToggleCheckbox.checked = savedTheme === 'light-mode';
+            } else {
+                document.body.classList.add('dark-mode');
+            }
+
+            themeToggleCheckbox.addEventListener('change', () => {
+                if (themeToggleCheckbox.checked) {
+                    document.body.classList.remove('dark-mode');
+                    document.body.classList.add('light-mode');
+                    localStorage.setItem('theme', 'light-mode');
+                } else {
+                    document.body.classList.remove('light-mode');
+                    document.body.classList.add('dark-mode');
+                    localStorage.setItem('theme', 'dark-mode');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

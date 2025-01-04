@@ -1,0 +1,1346 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.logo-img {
+    width: 150px;
+    height: auto;
+    transition: transform 0.3s ease, filter 0.3s ease; /* Added transition for smooth effect */
+}
+
+/* Body styles for both light and dark mode */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #c9d1d9;
+    margin: 0;
+    background-image: url('../ASSETS/background.png'); /* Path to your background image */
+    background-size: cover; /* Ensures the image covers the entire viewport */
+    background-position: center; /* Centers the background image */
+    background-attachment: fixed; /* Keeps the background fixed while scrolling */
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: -1; /* Ensures the overlay is behind the content */
+}
+
+
+/* Header and Navigation */
+header {
+    background: #161b22;
+    color: #c9d1d9;
+    padding: 1rem 0;
+    animation: fadeIn 1s ease-out;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    animation: slideIn 1s ease-out;
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #58a6ff;
+    animation: fadeIn 1s ease-out 0.5s forwards;
+    transition: transform 0.3s ease, color 0.3s ease; /* Added transition for hover effects */
+}
+
+nav .logo span {
+    margin-left: 10px; /* Space between logo image and text */
+}
+
+nav .logo:hover {
+    transform: scale(1.1); /* Slight scale effect when hovered */
+    color: #58a6ff; /* Ensure text color changes smoothly */
+}
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+    opacity: 0;
+    animation: fadeIn 1s ease-out 1s forwards;
+}
+
+nav .nav-links li {
+    margin: 0 1rem;
+}
+
+nav .nav-links a {
+    color: #c9d1d9;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s; /* Added transition for smooth hover effect */
+    position: relative; /* Needed for positioning the active indicator line */
+}
+
+/* Active link indicator */
+nav .nav-links a.active {
+    color: #58a6ff; /* Change color when active */
+}
+
+nav .nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Position the line below the text */
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #58a6ff; /* Line color */
+    border-radius: 2px;
+}
+
+nav .nav-links a:hover {
+    color: #58a6ff; /* Change the color on hover */
+    transform: translateY(-3px); /* Adds a lift effect on hover */
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 5rem 1rem;
+    background: url('../ASSETS/background.png') no-repeat center center/cover; /* Same background image as the body */
+    color: #c9d1d9;
+    animation: fadeIn 1s ease-out;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    opacity: 0;
+    animation: fadeIn 1s ease-out 0.5s forwards;
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for scaling and color change */
+}
+
+.hero h1:hover {
+    color: #58a6ff; /* Change color when hovered */
+    transform: scale(1.1); /* Slightly increase the size on hover */
+}
+
+/* Hover Effect for Hero Title */
+.hero h1:hover {
+    color: #58a6ff;
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Slide In Animation */
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* About Section */
+.about {
+    padding: 3rem 1rem;
+    background: #161b22;
+    color: #c9d1d9;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    opacity: 0;
+    animation: fadeIn 1s ease-out 0.5s forwards;
+}
+
+/* Hover Effect for About Title */
+.about h2:hover {
+    color: #58a6ff;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+.about p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0;
+    animation: fadeIn 1s ease-out 1s forwards;
+}
+
+/* Skills Section */
+.skills {
+    padding: 3rem 1rem;
+    text-align: center;
+    background: #0d1117;
+    color: #c9d1d9;
+}
+
+.skills h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    opacity: 0;
+    animation: fadeIn 1s ease-out 0.5s forwards;
+}
+
+/* Hover Effect for Skills Title */
+.skills h2:hover {
+    color: #58a6ff;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+.skills ul {
+    list-style: none;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skills li {
+    font-size: 1.1rem;
+    margin: 0.5rem 1rem;
+    padding: 0.5rem;
+    background: #161b22;
+    border-radius: 5px;
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+    cursor: pointer; /* Adds a pointer cursor to indicate interactivity */
+}
+
+.skills li:hover {
+    transform: scale(1.05); /* Slightly increases size on hover */
+    background-color: #58a6ff; /* Changes background color */
+    color: #0d1117; /* Text color change */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); /* Adds shadow effect */
+}
+
+.skill-description {
+    display: none;
+    font-size: 1rem;
+    margin-top: 1rem;
+    background: #161b22;
+    padding: 0.5rem;
+    border-radius: 5px;
+    color: #c9d1d9;
+}
+
+/* When the skill is clicked, show the description */
+.skills li.active .skill-description {
+    display: block;
+}
+
+/* Projects Section */
+.projects {
+    padding: 3rem 1rem;
+    text-align: center;
+    background: #161b22;
+    color: #c9d1d9;
+}
+
+.projects h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    opacity: 0;
+    animation: fadeIn 1s ease-out 0.5s forwards;
+}
+
+/* Hover Effect for Projects Title */
+.projects h2:hover {
+    color: #58a6ff;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+.project-item {
+    margin: 1rem auto;
+    max-width: 600px;
+    padding: 1rem;
+    background: #0d1117;
+    border: 1px solid #58a6ff;
+    border-radius: 5px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-item:hover {
+    transform: translateY(-5px); /* Lift effect */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+}
+
+.project-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #58a6ff;
+}
+
+.project-item p {
+    font-size: 1rem;
+}
+
+/* Project Screen Image Hover Effects */
+.project-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-top: 1rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-item img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Modal for Enlarged Image */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow: auto;
+    padding-top: 60px;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 5px;
+}
+
+/* Modal close button styling */
+.close {
+    color: var(--close-btn-dark); /* Default color will be dark mode */
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+}
+
+.close:hover,
+.close:focus {
+    color: #58a6ff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background: #161b22;
+    color: #c9d1d9;
+    margin-top: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav .nav-links li {
+        margin: 0.5rem 0;
+    }
+
+    .skills ul {
+        flex-direction: column;
+    }
+
+    .about p {
+        font-size: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 3rem 1rem;
+    }
+
+    .projects h2, .skills h2 {
+        font-size: 1.5rem;
+    }
+
+    .project-item {
+        max-width: 100%;
+        margin: 1rem 0;
+    }
+
+    .about p {
+        font-size: 0.95rem;
+    }
+}
+
+/* General styles for light mode */
+
+body.light-mode {
+    background-color: #ffffff; /* White background for the body */
+    color: #121212; /* Black text for general readability */
+}
+
+body.light-mode header,
+body.light-mode footer {
+    background-color: #f4f4f4; /* Light gray for header/footer */
+    color: #121212; /* Black text */
+}
+
+body.light-mode nav .nav-links a {
+    color: #121212; /* Dark text for navigation links */
+}
+
+body.light-mode nav .nav-links a:hover {
+    color: #007bff; /* Blue highlight on hover */
+}
+
+body.light-mode .hero {
+    background-color: #f9f9f9; /* Light background for hero section */
+    color: #121212; /* Black text */
+}
+
+body.light-mode .hero h1,
+body.light-mode .hero p {
+    color: white; /* Ensure all text in hero section is visible */
+}
+
+body.light-mode .about,
+body.light-mode .skills,
+body.light-mode .projects {
+    background-color: #ffffff; /* Light background for sections */
+    color: #121212; /* Black text */
+}
+
+body.light-mode .skills li {
+    background-color: #eaeaea; /* Light background for skills */
+    color: #121212; /* Black text for skills */
+}
+
+body.light-mode .skills li:hover {
+    background-color: #007bff; /* Blue hover for skills */
+    color: #ffffff; /* White text when hovered */
+}
+
+body.light-mode .projects .project-item {
+    background-color: #ffffff; /* Light project cards */
+    color: #121212; /* Black text */
+    border: 1px solid #ddd; /* Light border */
+}
+
+body.light-mode .projects .project-item:hover {
+    background-color: #007bff; /* Blue hover */
+    color: #ffffff; /* White text */
+}
+
+body.light-mode .project-item img {
+    border: 1px solid #ddd; /* Light border for images */
+}
+
+body.light-mode a {
+    color: #007bff; /* Blue links for visibility */
+}
+
+body.light-mode a:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
+/* Modal styles in light mode */
+body.light-mode .modal {
+    background-color: rgba(255, 255, 255, 0.9); /* Light translucent background */
+    color: #121212; /* Black text inside the modal */
+}
+
+/* Buttons and toggle inside light mode */
+body.light-mode .theme-toggle {
+    background-color: #121212; /* Dark button for toggle */
+    color: #ffffff; /* Light text on the button */
+}
+
+/* General styles for dark mode */
+body.dark-mode {
+    background-color: #121212; /* Dark background for the body */
+    color: #ffffff; /* Light text */
+}
+
+body.dark-mode header,
+body.dark-mode footer {
+    background-color: #1f1f1f; /* Darker sections */
+    color: #ffffff; /* Light text */
+}
+
+body.dark-mode nav .nav-links a {
+    color: #ffffff; /* Light text for navigation links */
+}
+
+body.dark-mode nav .nav-links a:hover {
+    color: #4fc3f7; /* Light blue highlight */
+}
+
+body.dark-mode .hero {
+    background-color: #1a1a1a; /* Dark background for hero section */
+    color: #ffffff; /* Light text */
+}
+
+body.dark-mode .hero h1,
+body.dark-mode .hero p {
+    color: #ffffff; /* Ensure all text in hero section is visible */
+}
+
+body.dark-mode .about,
+body.dark-mode .skills,
+body.dark-mode .projects {
+    background-color: #1f1f1f; /* Dark background for sections */
+    color: #ffffff; /* Light text */
+}
+
+body.dark-mode .skills li {
+    background-color: #333333; /* Dark background for skills */
+    color: #ffffff; /* Light text for skills */
+}
+
+body.dark-mode .skills li:hover {
+    background-color: #4fc3f7; /* Blue hover for skills */
+    color: #1a1a1a; /* Dark text when hovered */
+}
+
+body.dark-mode .projects .project-item {
+    background-color: #1a1a1a; /* Dark project cards */
+    color: #ffffff; /* Light text */
+    border: 1px solid #4fc3f7; /* Blue border */
+}
+
+body.dark-mode .projects .project-item:hover {
+    background-color: #4fc3f7; /* Blue hover */
+    color: #1a1a1a; /* Dark text */
+}
+
+body.dark-mode .project-item img {
+    border: 1px solid #4fc3f7; /* Blue border for images */
+}
+
+body.dark-mode a {
+    color: #4fc3f7; /* Light blue links for visibility */
+}
+
+body.dark-mode a:hover {
+    color: #0288d1; /* Darker blue on hover */
+}
+
+/* When in light mode, change the color of the close button */
+body.light-mode .close {
+    color: var(--close-btn-light);
+}
+
+
+/* Modal styles in dark mode */
+body.dark-mode .modal {
+    background-color: rgba(0, 0, 0, 0.9); /* Dark translucent background */
+    color: #ffffff; /* Light text inside the modal */
+}
+
+/* Buttons and toggle inside dark mode */
+body.dark-mode .theme-toggle {
+    background-color: #ffffff; /* Light button for toggle */
+    color: #121212; /* Dark text on the button */
+}
+
+/* Style for the container of the toggle button */
+.theme-toggle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px; /* Reduce padding for smaller space */
+}
+
+/* Style for the toggle button itself */
+.theme-toggle-label {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+}
+
+/* Style for the checkbox inside the toggle */
+.theme-toggle-checkbox {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Slider (the circle inside the toggle button) */
+.theme-toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.theme-toggle-slider::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: white;
+    transition: transform 0.3s ease;
+}
+
+/* When the toggle button is checked (active) */
+.theme-toggle-checkbox:checked + .theme-toggle-slider {
+    background-color: grey; /* Green for active state */
+}
+
+.theme-toggle-checkbox:checked + .theme-toggle-slider::before {
+    transform: translateX(30px); /* Move the circle to the right */
+}
+
+/* Optional: Add hover effect for better interaction */
+.theme-toggle-slider:hover {
+    background-color: #bbb;
+}
+
+:root {
+    --close-btn-dark: white; /* Color of close button in dark mode */
+    --close-btn-light: black; /* Color of close button in light mode */
+}
+
+/* Default Variables */
+:root {
+    /* Dark mode colors */
+    --background-color: #161b22; /* Dark background for sections */
+    --item-background-color: #0d1117; /* Dark item background */
+    --text-color: #c9d1d9; /* Light text color */
+    --highlight-color: #58a6ff; /* Highlight color */
+
+    /* CTA button default colors */
+    --cta-button-text: #ffffff; /* White text for dark mode */
+    --cta-button-background: #000000; /* Black background for dark mode */
+    --cta-button-border: #58a6ff; /* Highlight border for buttons in dark mode */
+    --cta-button-hover-background: #d9d9d9; /* Light gray for hover in dark mode */
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    --background-color: #161b22;
+    --item-background-color: #0d1117;
+    --text-color: #c9d1d9;
+    --cta-button-text: #58a6ff; /* White text for buttons in dark mode FOR ABOUT CTA BUTTON ON HOMEPAGE */
+    --cta-button-background: #000000; /* Black background for buttons in dark mode */
+    --cta-button-border: #58a6ff; /* Highlight border for buttons in dark mode */
+    --cta-button-hover-background: #d9d9d9; /* Light gray hover */
+}
+
+/* Light mode styles */
+body.light-mode {
+    --background-color: #ffffff; /* Light background for sections */
+    --item-background-color: #f5f5f5; /* Light item background */
+    --text-color: #000000; /* Dark text color */
+    --cta-button-text:  #58a6ff; /* Black text for buttons in light mode */
+    --cta-button-background: #ffffff; /* White background for buttons in light mode */
+    --cta-button-border: #333333; /* Dark gray border for buttons in light mode */
+    --cta-button-hover-background: #333333; /* Dark gray hover */
+}
+
+/* General Section Style */
+section {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Accomplishments Section */
+.accomplishments {
+    padding: 3rem 1rem;
+    text-align: center;
+    background-color: var(--background-color); /* Dynamic based on theme */
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.accomplishments h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    opacity: 0;
+    animation: fadeIn 1s ease-out 0.5s forwards;
+}
+
+/* Hover Effect for Accomplishments Title */
+.accomplishments h2:hover {
+    color: var(--highlight-color);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+.accomplishment-item {
+    margin: 1rem auto;
+    max-width: 600px;
+    padding: 1rem;
+    background: var(--item-background-color); /* Dynamic based on theme */
+    border: 1px solid var(--highlight-color);
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.accomplishment-item:hover {
+    transform: translateY(-5px); /* Lift effect */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+}
+
+.accomplishment-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--highlight-color);
+}
+
+.accomplishment-item p {
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+
+/* CTA Buttons */
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--cta-button-text); /* Dynamic button text */
+    background-color: var(--cta-button-background); /* Dynamic button background */
+    border: 2px solid var(--cta-button-border); /* Dynamic border for visibility */
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--cta-button-hover-background); /* Dynamic hover background */
+    transform: scale(1.05);
+}
+
+/* Style adjustment for theme toggle on the About page */
+body.about-page .theme-toggle-container {
+    transform: translateY(-5px); /* Move the toggle slightly up */
+}
+
+/* Profile Image Styling */
+.about-page .profile-image {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.about-page .profile-img {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 250px; /* Limit the size */
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures image fits well */
+}
+/* Hover effect */
+.about-page .profile-img:hover {
+    transform: scale(1.1); /* Slightly enlarges the image */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Adds a stronger shadow on hover */
+    cursor: pointer; /* Indicates the image is clickable */
+}
+
+/* Optional: Add custom spacing between list items */
+.about-page ul li {
+    margin-bottom: 10px; /* Adds space between list items */
+}
+
+/* Set background image for the about page */
+.about-page {
+    background-image: url('../ASSETS/background.png'); /* Path to your image */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents repeating the image */
+    padding: 20px; /* Adds padding to the content */
+    color: #fff; /* Optional: Ensures text is readable on dark backgrounds */
+}
+
+/* About page section styling */
+.about-page .about {
+    background-image: url('../ASSETS/background-image.jpg'); /* Path to your background image */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding: 60px 20px; /* Adds padding to the top and bottom */
+    color: #fff; /* White text color for better contrast on dark backgrounds */
+    border-radius: 10px; /* Optional: adds rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Optional: adds shadow for a subtle depth effect */
+}
+
+/* Content styling for spacing and readability */
+.about-page .about h2 {
+    font-size: 2.5rem; /* Larger font for the main heading */
+    margin-bottom: 20px; /* Adds space below the heading */
+    text-align: center; /* Centers the heading */
+    font-weight: bold;
+    text-transform: uppercase; /* Optional: makes the heading all caps */
+}
+
+.about-page .about h3 {
+    font-size: 2rem; /* Larger font for sub-headings */
+    margin-top: 40px; /* Adds space before sub-headings */
+    margin-bottom: 10px; /* Adds space below sub-headings */
+    font-weight: bold;
+}
+
+.about-page .about p {
+    font-size: 1.2rem; /* Increases the font size for better readability */
+    line-height: 1.6; /* Increases line height for better readability */
+    margin-bottom: 20px; /* Adds space between paragraphs */
+    text-align: justify; /* Makes the text justified */
+}
+
+/* Add some space and margin to separate content */
+.about-page .about ul {
+    list-style: none; /* Removes default bullet points */
+    padding-left: 0; /* Removes the left padding */
+}
+
+.about-page .about ul li {
+    font-size: 1.1rem; /* Slightly larger font for list items */
+    margin-bottom: 10px; /* Adds space between list items */
+    line-height: 1.5;
+}
+
+/* Add spacing between image and text */
+.profile-image {
+    margin-bottom: 30px;
+}
+
+/* Optional: Style the buttons or links within the About section */
+.about-page .about a {
+    text-decoration: none;
+    color: #58a6ff; /* blue color for links */
+    font-weight: bold;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.about-page .about a:hover {
+    color: #fff; /* Changes link color on hover */
+}
+
+.about-hero h1 {
+    font-size: 3rem; /* Adjust size as needed */
+    font-weight: bold; /* Optional: makes it bolder */
+    line-height: 1.2; /* Adjust line height for spacing */
+    margin: 0; /* Remove default margins if needed */
+}
+
+
+/* CTA button default colors */
+.about .cta-button {
+    color: var(--cta-button-text,#58a6ff); /* White text for dark mode */
+    background-color: var(--cta-button-background, #000000); /* Black background for dark mode */
+    border: 2px solid var(--cta-button-border, #58a6ff); /* Highlight border for buttons in dark mode */
+    padding: 12px 24px; /* Adjust padding as needed */
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px; /* Rounded corners */
+    display: inline-block;
+    font-weight: bold;
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for CTA button */
+.about .cta-button:hover {
+    background-color: var(--cta-button-hover-background, #d9d9d9); /* Light gray for hover in dark mode */
+    color: #000000; /* Change text color on hover */
+    border-color: #58a6ff; /* Keep the border color same on hover */
+}
+
+.about-hero .hero-content .hero-paragraph {
+    font-size: 1.1rem; /* Smaller font size */
+    max-width: 600px; /* Optional: Set a max width for better readability */
+    margin: 0 auto; /* Center the paragraph */
+}
+
+
+/* Styling for the iframe */
+iframe {
+    border: none;
+    width: 100%;
+    height: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+/* Optional: For better responsiveness */
+@media (max-width: 768px) {
+    iframe {
+        height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    iframe {
+        height: 300px;
+    }
+}
+
+/* Expanded iframe style when clicked */
+iframe.expanded {
+    height: 80vh; /* Expand to 80% of the viewport height */
+    z-index: 1000;
+    position: relative;
+    margin-top: 40px;
+}
+
+button {
+    background-color:  #58a6ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    background-color:  #58a6ff;
+}
+
+/* Style for modal */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1; /* Sit on top */
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+} 
+
+/* Modal content */
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;  /* Limit max width */
+    max-height: 80%; /* Limit max height */
+    object-fit: contain; /* Maintain aspect ratio without stretching */
+}
+
+
+/* Caption text */
+#caption {
+    text-align: center;
+    color: #fff;
+    padding: 10px;
+    font-size: 18px;
+}
+
+/* Close button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.project-screen {
+    cursor: pointer;
+}
+
+/* Accreditations Hero Section */
+.accreditations-hero {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    padding-top: 120px; /* Adjust for nav bar offset */
+    padding-bottom: 100px; /* Adjust as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.accreditations-hero h1 {
+    font-size: 3rem; /* Adjust size as needed */
+    font-weight: bold; /* Optional: makes it bolder */
+    line-height: 1.2; /* Adjust line height for spacing */
+    margin: 0; /* Remove default margins if needed */
+}
+
+/* Hero overlay for the title and description */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Dark semi-transparent overlay */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px; /* Adjust padding */
+}
+
+.hero-overlay h1 {
+    font-size: 3rem; /* Adjust as needed */
+    font-weight: bold;
+    margin: 0;
+}
+
+.hero-overlay p {
+    font-size: 1.25rem; /* Adjust as needed */
+    margin-top: 20px;
+    max-width: 800px;
+    line-height: 1.6; /* Improved readability with line height */
+}
+
+/* Heading Styling */
+.accreditations-page .accreditations h2 {
+    font-size: 2rem; /* Larger font for the main heading */
+    margin-bottom: 20px; /* Adds space below the heading */
+    font-weight: bold;
+    text-transform: uppercase; /* Optional: makes the heading all caps */
+    text-align: center; /* Centers the heading */
+}
+
+/* Sub-heading Styling */
+.accreditations-page .accreditations h3 {
+    font-size: 2rem; /* Larger font for sub-headings */
+    margin-top: 40px; /* Adds space before sub-headings */
+    margin-bottom: 10px; /* Adds space below sub-headings */
+    font-weight: bold;
+    text-align: center; /* Centers the sub-heading */
+}
+
+/* Paragraph Styling */
+.accreditations-page .accreditations p {
+    font-size: 1.2rem; /* Increases the font size for better readability */
+    line-height: 1.6; /* Increases line height for better readability */
+    margin-bottom: 20px; /* Adds space between paragraphs */
+    text-align: center; /* Centers the paragraph text */
+}
+
+/* List Styling */
+.accreditations-page .accreditations ul {
+    list-style: none; /* Removes default bullet points */
+    padding-left: 0; /* Removes the left padding */
+    text-align: center; /* Centers the list items */
+}
+
+.accreditations-page .accreditations ul li {
+    font-size: 1.1rem; /* Slightly larger font for list items */
+    margin-bottom: 10px; /* Adds space between list items */
+    line-height: 1.5;
+}
+
+/* CTA Button Styling */
+.accreditations-page .cta-button {
+    color: var(--cta-button-text, #58a6ff); /* Keep the original text color */
+    background-color: var(--cta-button-background, #000000); /* Keep the original background color */
+    border: 2px solid var(--cta-button-border, #58a6ff); /* Keep the original border color */
+    padding: 12px 24px; /* Maintain the padding */
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px; /* Keep the rounded corners */
+    display: inline-block; /* Keep the button as inline-block */
+    font-weight: bold;
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+    margin-top: 20px; /* Maintain space above the button */
+    margin-bottom: 20px; /* Optional: Adds space below the button */
+}
+
+/* Hover effect for CTA Button */
+.accreditations-page .cta-button:hover {
+    background-color: var(--cta-button-hover-background, #d9d9d9); /* Light gray for hover */
+    color: #000000; /* Change text color on hover */
+    border-color: #58a6ff; /* Keep the border color same on hover */
+}
+
+/* Ensure the button is centered below the text */
+.accreditations-page .cta-button-wrapper {
+    text-align: center; /* Center the button */
+    margin-top: 30px; /* Add space above the wrapper if needed */
+}
+
+
+/* Optional: Add some spacing to separate items */
+.accreditations-page ul li {
+    margin-bottom: 15px; /* Adds space between list items */
+}
+
+/* Gallery Section Styling */
+.gallery {
+    overflow: hidden;
+    width: 100%;
+    margin: 2rem 0;
+    position: relative;
+}
+
+/* Ensuring the gallery track is wide enough to contain all images */
+.gallery-track {
+    display: flex;
+    gap: 1rem;
+    position: relative;
+    white-space: nowrap;
+    will-change: transform;
+    transition: transform 0.3s linear;
+    width: fit-content;  /* Ensures the gallery track adjusts to the total width of the images */
+}
+/* Adjusting the images to fit properly */
+.gallery-track img {
+    height: 200px; /* Adjust height as needed */
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+    width: auto;  /* Ensure images maintain their aspect ratio */
+}
+
+.gallery-track img:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+/* Styling for gallery lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox.active {
+    display: flex; /* Show when active */
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transform: translateY(-50%);
+}
+
+.lightbox-arrow {
+    font-size: 1.5rem; /* Smaller arrow size */
+    color: white;
+    cursor: pointer;
+    opacity: 0.6; /* Subtle opacity */
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.lightbox-arrow:hover {
+    opacity: 1;
+}
+
+.lightbox-left {
+    margin-left: 10px;
+}
+
+.lightbox-right {
+    margin-right: 10px; /* Adjust this value to move the right arrow closer */
+}
+
+/* Lightbox image style */
+#lightbox-image {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+}
+
+/* Custom CSS for arrows that indicate navigation */
+.lightbox-arrow:before {
+    content: '←'; /* Left arrow */
+}
+
+.lightbox-arrow.lightbox-right:before {
+    content: '→'; /* Right arrow */
+}
+
+/* Add custom spacing between list items */
+.accreditations-page ul li {
+    margin-bottom: 10px; /* Adds space between list items */
+}
+
+/* Optional: Style the links within the Accreditations section */
+.accreditations-page a {
+    text-decoration: none;
+    color: #58a6ff; /* blue color for links */
+    font-weight: bold;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.contact h2, .contact h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-align: center;  /* Centers the headings */
+    color: #fff;         /* Ensures the text is white */
+}
+
+.contact p {
+    text-align: center;  /* Centers the paragraph */
+    font-size: 1.2rem;    /* Optional: Adjust font size */
+    color: #fff;          /* Optional: Ensure the text is white */
+    margin-bottom: 20px;  /* Optional: Adds space below the paragraph */
+}
+
+.contact ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.contact ul li {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.contact ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact ul li a:hover {
+    color: #4caf50;
+}
+
+
+/* Form Styling */
+form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    max-width: 600px;
+    margin-top: 30px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 8px;
+
+    /* Center the form horizontally and vertically */
+       width: 100%;  /* Ensures the form stretches to fill the available space */
+       margin: 0 auto;
+}
+
+form label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+form input, form textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: none;
+    width: 100%;
+    margin-top: 5px;
+    background-color: var(--input-bg, #fff);
+    color: #333;
+    transition: border 0.3s ease;
+}
+
+form input:focus, form textarea:focus {
+    border: 2px solid #58a6ff;
+    outline: none;
+}
+
+form button {
+    background-color: #58a6ff;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+
